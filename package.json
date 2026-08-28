@@ -1,0 +1,36 @@
+{
+  "name": "@salta/theme-teririblocks",
+  "version": "0.1.0",
+  "description": "TeririBlocks 浅色主题 / Visual Design System（基于 Tailwind CSS v4 + daisyUI 5）",
+  "type": "module",
+  "exports": {
+    ".": {
+      "default": "./src/index.css"
+    },
+    "./tokens": {
+      "types": "./dist/tokens.d.ts",
+      "import": "./dist/tokens.js"
+    },
+    "./theme": {
+      "types": "./dist/theme.d.ts",
+      "import": "./dist/theme.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "files": ["src", "dist"],
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json",
+    "typecheck": "tsc --noEmit"
+  },
+  "keywords": ["theme", "tailwindcss", "daisyui", "teririblocks"],
+  "license": "MIT",
+  "peerDependencies": {
+    "daisyui": "^5",
+    "tailwindcss": "^4"
+  },
+  "devDependencies": {
+    "daisyui": "^5.7.20",
+    "tailwindcss": "^4.3.3",
+    "typescript": "~6.0.2"
+  }
+}

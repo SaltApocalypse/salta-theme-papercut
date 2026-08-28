@@ -1,0 +1,76 @@
+/* =====================================================================
+ * @salta/theme-teririblocks —— TeririBlocks 浅色主题 / Visual Design System
+ *
+ * 定位：让一个普通的 Tailwind CSS v4 + daisyUI 5 项目拥有特日日（Teriri）
+ * 风格的浅色视觉语言。只沉淀视觉（配色 / token），不封装组件。
+ *
+ * 配色参考 TeririBlocks 方块角色色板（经 saturateColor 提饱和后）：
+ *   Rose（Teriri/Luna）   #ff8da0 → primary
+ *   Cyan（WonderlandTrek）#87ecff → secondary
+ *   Periwinkle（LovesReply）#9fc9ff → accent
+ *   基础表面为暖白浅色系。
+ *
+ * 基于 daisyUI 5（Tailwind v4 插件）承载：
+ *   - @plugin "daisyui/theme" —— 定义 teririblocks 主题 token
+ *   - @theme                  —— daisyUI 未覆盖的扩展 token
+ *
+ * 使用方需在入口 CSS 中引入（daisyUI 基底由使用方提供）：
+ *   @import "tailwindcss";
+ *   @plugin "daisyui";
+ *   @import "@salta/theme-teririblocks";
+ *
+ * 配色统一以主题 token 为准；JS/SVG 侧引用 @salta/theme-teririblocks/tokens
+ * ===================================================================== */
+
+@plugin "daisyui/theme" {
+  name: "teririblocks";
+  default: true;
+  color-scheme: "light";
+
+  /* 基础表面（暖白浅色） */
+  --color-base-100: #fffaf8;
+  --color-base-200: #f6efec;
+  --color-base-300: #e9dfda;
+  --color-base-content: #443a4d;
+
+  /* 主色：Rose（Teriri / Luna） */
+  --color-primary: #ff8da0;
+  --color-primary-content: #4a1020;
+
+  /* 副色：Cyan（WonderlandTrek） */
+  --color-secondary: #87ecff;
+  --color-secondary-content: #043a4a;
+
+  /* 强调：Periwinkle（LovesReply） */
+  --color-accent: #9fc9ff;
+  --color-accent-content: #152a54;
+
+  /* 中性 */
+  --color-neutral: #a89fb0;
+  --color-neutral-content: #2a2431;
+
+  /* 状态色 */
+  --color-info: #0ea5e9;
+  --color-info-content: #082f49;
+  --color-success: #16a34a;
+  --color-success-content: #052e16;
+  --color-warning: #d97706;
+  --color-warning-content: #431407;
+  --color-error: #e11d48;
+  --color-error-content: #4c0519;
+
+  /* daisyUI 组件所需的形状/边框 token（柔圆角） */
+  --radius-selector: 0.5rem;
+  --radius-field: 0.5rem;
+  --radius-box: 0.75rem;
+  --size-selector: 0.25rem;
+  --size-field: 0.25rem;
+  --border: 1px;
+  --depth: 1;
+  --noise: 0;
+}
+
+@theme {
+  /* daisyUI 主题未覆盖的扩展 token */
+  --color-primary-soft: #ffd6de;
+}

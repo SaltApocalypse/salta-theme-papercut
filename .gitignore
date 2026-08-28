@@ -1,0 +1,6 @@
+# 说明：dist/ 需提交（供 Git dependency 直接使用，无需使用方另行构建）
+node_modules/
+*.log
+.DS_Store
+.env
+.env.*

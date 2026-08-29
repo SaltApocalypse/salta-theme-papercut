@@ -1,5 +1,5 @@
 {
-  "name": "@salta/theme-teririblocks",
+  "name": "@salta/theme-teriri",
   "version": "0.1.0",
   "description": "TeririBlocks 浅色主题 / Visual Design System（基于 Tailwind CSS v4 + daisyUI 5）",
   "type": "module",
@@ -26,7 +26,7 @@
     "build": "tsc -p tsconfig.build.json",
     "typecheck": "tsc --noEmit"
   },
-  "keywords": ["theme", "tailwindcss", "daisyui", "teririblocks"],
+  "keywords": ["theme", "tailwindcss", "daisyui", "teriri"],
   "license": "MIT",
   "peerDependencies": {
     "daisyui": "^5",

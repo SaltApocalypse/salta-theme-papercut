@@ -7,7 +7,7 @@ import { Alert, Button, Dropdown, Input, LightButton, Panel, ThemeBackground } f
  * 应用层据此注册/切换主题 —— 切主题 = 换 components 里的组件。
  */
 export const theme = {
-    id: 'teririblocks',
+    id: "teriri",
     name: 'TeririBlocks',
     components: {
         Alert,

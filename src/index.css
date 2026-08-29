@@ -1,5 +1,5 @@
 /* =====================================================================
- * @salta/theme-teririblocks —— TeririBlocks 浅色主题 / Visual Design System
+ * @salta/theme-teriri —— TeririBlocks 浅色主题 / Visual Design System
  *
  * 定位：让一个普通的 Tailwind CSS v4 + daisyUI 5 项目拥有特日日（Teriri）
  * 风格的浅色视觉语言。只沉淀视觉（配色 / token），不封装组件。
@@ -11,19 +11,19 @@
  *   基础表面为暖白浅色系。
  *
  * 基于 daisyUI 5（Tailwind v4 插件）承载：
- *   - @plugin "daisyui/theme" —— 定义 teririblocks 主题 token
+ *   - @plugin "daisyui/theme" —— 定义 teriri 主题 token
  *   - @theme                  —— daisyUI 未覆盖的扩展 token
  *
  * 使用方需在入口 CSS 中引入（daisyUI 基底由使用方提供）：
  *   @import "tailwindcss";
  *   @plugin "daisyui";
- *   @import "@salta/theme-teririblocks";
+ *   @import "@salta/theme-teriri";
  *
- * 配色统一以主题 token 为准；JS/SVG 侧引用 @salta/theme-teririblocks/tokens
+ * 配色统一以主题 token 为准；JS/SVG 侧引用 @salta/theme-teriri/tokens
  * ===================================================================== */
 
 @plugin "daisyui/theme" {
-  name: "teririblocks";
+  name: "teriri";
   default: true;
   color-scheme: "light";
 

@@ -1,15 +1,22 @@
+import { Alert, Button, Dropdown, Input, LightButton, Panel, ThemeBackground } from './components';
 /**
  * 主题包统一出口（供应用层的主题注册表使用）。
  *
  * 约定：所有 @salta/theme-xxx 都以相同结构导出 `theme` 对象：
  *   { id, name, components: { 同名基础组件集 } }
  * 应用层据此注册/切换主题 —— 切主题 = 换 components 里的组件。
- *
- * 当前为「主题先行」阶段：仅提供配色与统一出口，组件集后续按需补齐。
  */
 export declare const theme: {
     readonly id: "teririblocks";
     readonly name: "TeririBlocks";
-    readonly components: {};
+    readonly components: {
+        readonly Alert: typeof Alert;
+        readonly Button: typeof Button;
+        readonly Dropdown: typeof Dropdown;
+        readonly Input: typeof Input;
+        readonly LightButton: typeof LightButton;
+        readonly Panel: typeof Panel;
+        readonly ThemeBackground: typeof ThemeBackground;
+    };
 };
 //# sourceMappingURL=theme.d.ts.map

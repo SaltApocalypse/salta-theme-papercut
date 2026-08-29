@@ -1,0 +1,16 @@
+/** @salta/theme-teririblocks 组件出口（Theme Component Set） */
+export type { AlertProps, AlertVariant } from './Alert';
+export { Alert } from './Alert';
+export type { ButtonProps, ButtonSize } from './Button';
+export { Button } from './Button';
+export type { DropdownOption, DropdownProps } from './Dropdown';
+export { Dropdown } from './Dropdown';
+export type { InputProps } from './Input';
+export { Input } from './Input';
+export type { LightButtonProps } from './LightButton';
+export { LightButton } from './LightButton';
+export type { PanelProps } from './Panel';
+export { Panel } from './Panel';
+export type { ThemeBackgroundProps } from './ThemeBackground';
+export { ThemeBackground } from './ThemeBackground';
+//# sourceMappingURL=index.d.ts.map

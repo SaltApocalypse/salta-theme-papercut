@@ -7,6 +7,10 @@
     ".": {
       "default": "./src/index.css"
     },
+    "./components": {
+      "types": "./dist/components/index.d.ts",
+      "import": "./dist/components/index.js"
+    },
     "./tokens": {
       "types": "./dist/tokens.d.ts",
       "import": "./dist/tokens.js"
@@ -26,10 +30,16 @@
   "license": "MIT",
   "peerDependencies": {
     "daisyui": "^5",
+    "react": ">=18",
+    "react-dom": ">=18",
     "tailwindcss": "^4"
   },
   "devDependencies": {
+    "@types/react": "^19.2.17",
+    "@types/react-dom": "^19.2.3",
     "daisyui": "^5.7.20",
+    "react": "^19.2.8",
+    "react-dom": "^19.2.8",
     "tailwindcss": "^4.3.3",
     "typescript": "~6.0.2"
   }

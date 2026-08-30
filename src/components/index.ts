@@ -1,9 +1,9 @@
-/** @salta/theme-teriri 组件出口（Theme Component Set） */
+/** @salta/theme-papercut 组件出口（Theme Component Set） */
 export type { AlertProps, AlertVariant } from './Alert'
 export { Alert } from './Alert'
 export type { ButtonProps, ButtonSize, ButtonVariant } from './Button'
 export { Button } from './Button'
-export type { DropdownOption, DropdownProps } from './Dropdown'
+export type { DropdownOption, DropdownProps, DropdownWidth } from './Dropdown'
 export { Dropdown } from './Dropdown'
 export type { InputProps } from './Input'
 export { Input } from './Input'

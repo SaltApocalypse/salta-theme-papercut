@@ -1,4 +1,4 @@
-import { Alert, Button, Dropdown, Input, LightButton, Panel, ThemeBackground } from './components';
+import { Alert, Button, Dropdown, Input, LightButton, Panel, Switch, ThemeBackground, Tooltip, } from './components';
 /**
  * 主题包统一出口（供应用层的主题注册表使用）。
  *
@@ -7,8 +7,8 @@ import { Alert, Button, Dropdown, Input, LightButton, Panel, ThemeBackground } f
  * 应用层据此注册/切换主题 —— 切主题 = 换 components 里的组件。
  */
 export const theme = {
-    id: "teriri",
-    name: 'TeririBlocks',
+    id: "papercut",
+    name: 'Papercut',
     components: {
         Alert,
         Button,
@@ -16,7 +16,9 @@ export const theme = {
         Input,
         LightButton,
         Panel,
+        Switch,
         ThemeBackground,
+        Tooltip,
     },
 };
 //# sourceMappingURL=theme.js.map

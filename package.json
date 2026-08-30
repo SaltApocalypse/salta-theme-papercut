@@ -1,6 +1,6 @@
 {
   "name": "@salta/theme-papercut",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "TeririBlocks 浅色主题 / Visual Design System（基于 Tailwind CSS v4 + daisyUI 5）",
   "type": "module",
   "exports": {

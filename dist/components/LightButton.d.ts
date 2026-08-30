@@ -15,5 +15,5 @@ export interface LightButtonProps extends ButtonHTMLAttributes<HTMLButtonElement
  * 仅上/左 1.5px 描边，右/下边由后层纸片构成外轮廓。
  * active 时前层提升为主色纸片（选中反馈）；hover/active 位移改变层叠关系。
  */
-export declare function LightButton({ children, className, size, active, square, ...rest }: LightButtonProps): import("react").JSX.Element;
+export declare function LightButton({ children, className, size, active, square, disabled, ...rest }: LightButtonProps): import("react").JSX.Element;
 //# sourceMappingURL=LightButton.d.ts.map

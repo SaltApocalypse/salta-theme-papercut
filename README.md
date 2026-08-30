@@ -1,4 +1,4 @@
-# @salta/theme-teriri
+# @salta/theme-papercut
 
 TeririBlocks 浅色主题 / Visual Design System（基于 **Tailwind CSS v4** + **daisyUI 5**）。
 
@@ -11,7 +11,7 @@ TeririBlocks 浅色主题 / Visual Design System（基于 **Tailwind CSS v4** + 
 ```json
 {
   "dependencies": {
-    "@salta/theme-teriri": "github:SaltApocalypse/salta-theme-teriri"
+    "@salta/theme-papercut": "github:SaltApocalypse/salta-theme-papercut"
   }
 }
 ```
@@ -23,19 +23,19 @@ TeririBlocks 浅色主题 / Visual Design System（基于 **Tailwind CSS v4** + 
 ```css
 @import "tailwindcss";
 @plugin "daisyui";
-@import "@salta/theme-teriri";
+@import "@salta/theme-papercut";
 ```
 
 ### 2. JS/SVG 侧配色 token
 
 ```ts
-import { theme } from "@salta/theme-teriri/tokens";
+import { theme } from "@salta/theme-papercut/tokens";
 ```
 
 ### 3. 主题统一出口（应用层主题注册/切换）
 
 ```ts
-import { theme } from "@salta/theme-teriri/theme";
+import { theme } from "@salta/theme-papercut/theme";
 // theme = { id: "teriri", name: 'TeririBlocks', components: {} }
 ```
 
@@ -66,7 +66,7 @@ pnpm typecheck
 ## 目录结构
 
 ```text
-salta-theme-teriri/
+salta-theme-papercut/
 ├── src/
 │   ├── index.css   # daisyUI/theme 主题 token + @theme 扩展
 │   ├── tokens.ts   # JS 侧配色 token

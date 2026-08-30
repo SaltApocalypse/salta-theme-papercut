@@ -1,29 +1,33 @@
 /* =====================================================================
- * @salta/theme-teriri —— TeririBlocks 浅色主题 / Visual Design System
+ * @salta/theme-papercut —— TeririBlocks 视觉设计系统（浅色 / 深色）
  *
  * 定位：让一个普通的 Tailwind CSS v4 + daisyUI 5 项目拥有特日日（Teriri）
- * 风格的浅色视觉语言。只沉淀视觉（配色 / token），不封装组件。
+ * 风格的纸刻（papercut）视觉语言。只沉淀视觉（配色 / token），不封装组件。
  *
  * 配色参考 TeririBlocks 方块角色色板（经 saturateColor 提饱和后）：
  *   Rose（Teriri/Luna）   #ff8da0 → primary
  *   Cyan（WonderlandTrek）#87ecff → secondary
  *   Periwinkle（LovesReply）#9fc9ff → accent
- *   基础表面为暖白浅色系。
+ *   基础表面：浅色主题为暖白浅色系；深色主题为暖调暗紫灰系（同色相加深）。
  *
  * 基于 daisyUI 5（Tailwind v4 插件）承载：
- *   - @plugin "daisyui/theme" —— 定义 teriri 主题 token
+ *   - @plugin "daisyui/theme" —— 定义 papercut / papercut-dark 主题 token
  *   - @theme                  —— daisyUI 未覆盖的扩展 token
  *
  * 使用方需在入口 CSS 中引入（daisyUI 基底由使用方提供）：
  *   @import "tailwindcss";
  *   @plugin "daisyui";
- *   @import "@salta/theme-teriri";
+ *   @import "@salta/theme-papercut";
  *
- * 配色统一以主题 token 为准；JS/SVG 侧引用 @salta/theme-teriri/tokens
+ * 配色统一以主题 token 为准；JS/SVG 侧引用 @salta/theme-papercut/tokens
+ *
+ * 纸刻墨线（papercut-ink）：组件（Button/LightButton/Input/Dropdown）的
+ * 1.5px 描边与后层纸片共用此令牌。浅色主题为深墨（#2f2229），深色主题为
+ * 浅奶油（#e9dce4），随 data-theme 自动切换。
  * ===================================================================== */
 
 @plugin "daisyui/theme" {
-  name: "teriri";
+  name: "papercut";
   default: true;
   color-scheme: "light";
 
@@ -59,6 +63,12 @@
   --color-error: #e11d48;
   --color-error-content: #4c0519;
 
+  /* 纸刻墨线（浅色：深墨） */
+  --color-papercut-ink: #2f2229;
+
+  /* 扩展 token（浅色柔和主色） */
+  --color-primary-soft: #ffd6de;
+
   /* daisyUI 组件所需的形状/边框 token（柔圆角） */
   --radius-selector: 0.5rem;
   --radius-field: 0.5rem;
@@ -70,7 +80,71 @@
   --noise: 0;
 }
 
-@theme {
-  /* daisyUI 主题未覆盖的扩展 token */
-  --color-primary-soft: #ffd6de;
+@plugin "daisyui/theme" {
+  name: "papercut-dark";
+  default: false;
+  color-scheme: "dark";
+
+  /* 基础表面（暖调暗紫灰，同色相加深） */
+  --color-base-100: #1c151a;
+  --color-base-200: #241b21;
+  --color-base-300: #2f2430;
+  --color-base-content: #f2e9ee;
+
+  /* 主色：Rose（色相不变，content 换为深玫瑰） */
+  --color-primary: #ff8da0;
+  --color-primary-content: #2a0a12;
+
+  /* 副色：Cyan */
+  --color-secondary: #87ecff;
+  --color-secondary-content: #03222e;
+
+  /* 强调：Periwinkle */
+  --color-accent: #9fc9ff;
+  --color-accent-content: #0d1c38;
+
+  /* 中性（压暗，content 提亮） */
+  --color-neutral: #6b6270;
+  --color-neutral-content: #efe8f2;
+
+  /* 状态色（提亮一档保证暗底可读） */
+  --color-info: #38bdf8;
+  --color-info-content: #04293c;
+  --color-success: #22c55e;
+  --color-success-content: #04220f;
+  --color-warning: #f59e0b;
+  --color-warning-content: #2b1502;
+  --color-error: #f43f5e;
+  --color-error-content: #2b0510;
+
+  /* 纸刻墨线（深色：浅奶油，纸刻在白纸上剪出） */
+  --color-papercut-ink: #e9dce4;
+
+  /* 扩展 token（深色柔和主色） */
+  --color-primary-soft: #3f1e29;
+
+  /* 形状/边框 token 与浅色主题保持一致 */
+  --radius-selector: 0.5rem;
+  --radius-field: 0.5rem;
+  --radius-box: 0.75rem;
+  --size-selector: 0.25rem;
+  --size-field: 0.25rem;
+  --border: 1px;
+  --depth: 1;
+  --noise: 0;
+}
+
+/* =====================================================================
+ * Dropdown 原生下拉弹层（Chrome 121+ ::picker(select)）无圆角覆盖
+ * ---------------------------------------------------------------------
+ * daisyUI 5 给 .select 的 ::picker(select) 弹层用 var(--radius-box)，
+ * option 用 var(--radius-field) —— 与本设计系统「无圆角」语言相悖。
+ * 用更高特异性的选择器（.select.select）压过组件层规则。
+ * ===================================================================== */
+.select.select::picker(select),
+.select select::picker(select) {
+  border-radius: 0;
+}
+.select.select option {
+  border-radius: 0;
 }

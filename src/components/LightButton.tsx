@@ -39,12 +39,12 @@ export function LightButton({
       {/* 后层：黑色纸片（独立几何图形，小错位 + 微旋转） */}
       <span
         aria-hidden
-        className="pointer-events-none absolute inset-0 -rotate-1 translate-x-1 translate-y-1 rounded-none bg-[#2f2229]"
+        className="pointer-events-none absolute inset-0 -rotate-1 translate-x-1 translate-y-1 rounded-none bg-[var(--color-papercut-ink)]"
       />
       {/* 前层：浅色纸片（承载内容；hover/active 位移改变层叠） */}
       <button
         type="button"
-        className={`btn ${square ? 'btn-square' : 'w-full'} ${SIZE_CLASS[size]} relative rounded-none border-0 border-l-[1.5px] border-t-[1.5px] border-[#2f2229] font-semibold shadow-none transition-transform duration-150 ease-out hover:translate-x-0.5 hover:translate-y-0.5 active:translate-x-1 active:translate-y-1 disabled:pointer-events-none disabled:border-neutral/50 disabled:bg-neutral/40 disabled:text-neutral/50 ${frontTone}`}
+        className={`btn ${square ? 'btn-square' : 'w-full'} ${SIZE_CLASS[size]} relative rounded-none border-0 border-l-[1.5px] border-t-[1.5px] border-[color:var(--color-papercut-ink)] font-semibold shadow-none transition-transform duration-150 ease-out hover:translate-x-0.5 hover:translate-y-0.5 active:translate-x-1 active:translate-y-1 disabled:pointer-events-none disabled:border-neutral/50 disabled:bg-neutral/40 disabled:text-neutral/50 ${frontTone}`}
         {...rest}
       >
         {children}

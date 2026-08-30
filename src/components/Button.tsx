@@ -2,6 +2,8 @@ import type { ButtonHTMLAttributes, ReactNode } from 'react'
 
 export type ButtonSize = 'xs' | 'sm' | 'md' | 'lg'
 
+export type ButtonVariant = 'primary' | 'warning'
+
 export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   children: ReactNode
   size?: ButtonSize
@@ -9,6 +11,8 @@ export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   square?: boolean
   /** 透明/无边框变体（btn-ghost，暂保持平面） */
   ghost?: boolean
+  /** 颜色变体：primary（默认）/ warning（警告） */
+  variant?: ButtonVariant
 }
 
 const SIZE_CLASS: Record<ButtonSize, string> = {
@@ -37,8 +41,14 @@ export function Button({
   size = 'md',
   square = false,
   ghost = false,
+  variant = 'primary',
   ...rest
 }: ButtonProps) {
+  const toneClass =
+    variant === 'warning'
+      ? 'bg-warning text-warning-content hover:bg-warning'
+      : 'bg-primary text-primary-content hover:bg-primary'
+
   if (ghost) {
     return (
       <button
@@ -58,10 +68,10 @@ export function Button({
         aria-hidden
         className="pointer-events-none absolute inset-0 -rotate-2 translate-x-1.5 translate-y-1.5 rounded-none bg-[#2f2229]"
       />
-      {/* 前层：主色纸片（承载内容；仅上/左 1.5px 描边，右/下边由后层纸片构成外轮廓；hover/active 位移改变层叠） */}
+      {/* 前层：纸片（承载内容；仅上/左 1.5px 描边，右/下边由后层纸片构成外轮廓；hover/active 位移改变层叠） */}
       <button
         type="button"
-        className={`btn ${square ? 'btn-square' : 'w-full'} ${SIZE_CLASS[size]} relative rounded-none border-0 border-l-[1.5px] border-t-[1.5px] border-[#2f2229] bg-primary font-bold text-primary-content shadow-none transition-transform duration-150 ease-out hover:translate-x-1 hover:translate-y-1 hover:bg-primary active:translate-x-1.5 active:translate-y-1.5 disabled:pointer-events-none disabled:border-neutral/50 disabled:bg-neutral/40 disabled:text-neutral/50`}
+        className={`btn ${square ? 'btn-square' : 'w-full'} ${SIZE_CLASS[size]} relative rounded-none border-0 border-l-[1.5px] border-t-[1.5px] border-[#2f2229] font-bold shadow-none transition-transform duration-150 ease-out ${toneClass} hover:translate-x-1 hover:translate-y-1 active:translate-x-1.5 active:translate-y-1.5 disabled:pointer-events-none disabled:border-neutral/50 disabled:bg-neutral/40 disabled:text-neutral/50`}
         {...rest}
       >
         {children}

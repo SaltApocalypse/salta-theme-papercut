@@ -1,7 +1,7 @@
 /** @salta/theme-teriri 组件出口（Theme Component Set） */
 export type { AlertProps, AlertVariant } from './Alert'
 export { Alert } from './Alert'
-export type { ButtonProps, ButtonSize } from './Button'
+export type { ButtonProps, ButtonSize, ButtonVariant } from './Button'
 export { Button } from './Button'
 export type { DropdownOption, DropdownProps } from './Dropdown'
 export { Dropdown } from './Dropdown'

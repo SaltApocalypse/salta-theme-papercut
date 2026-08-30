@@ -1,5 +1,6 @@
 import type { ButtonHTMLAttributes, ReactNode } from 'react';
 export type ButtonSize = 'xs' | 'sm' | 'md' | 'lg';
+export type ButtonVariant = 'primary' | 'warning';
 export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
     children: ReactNode;
     size?: ButtonSize;
@@ -7,6 +8,8 @@ export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
     square?: boolean;
     /** 透明/无边框变体（btn-ghost，暂保持平面） */
     ghost?: boolean;
+    /** 颜色变体：primary（默认）/ warning（警告） */
+    variant?: ButtonVariant;
 }
 /**
  * Button —— 纸刻风（flat layered cutout）主操作按钮。
@@ -18,5 +21,5 @@ export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
  * 交互：hover / active 时前层纸片位移、改变层叠关系（如把上层纸片按平对齐），
  * 这只是反馈，不是默认视觉的核心。
  */
-export declare function Button({ children, className, size, square, ghost, ...rest }: ButtonProps): import("react").JSX.Element;
+export declare function Button({ children, className, size, square, ghost, variant, ...rest }: ButtonProps): import("react").JSX.Element;
 //# sourceMappingURL=Button.d.ts.map

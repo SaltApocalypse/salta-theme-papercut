@@ -1,6 +1,6 @@
 import type { ButtonHTMLAttributes, ReactNode } from 'react';
 export type ButtonSize = 'xs' | 'sm' | 'md' | 'lg';
-export type ButtonVariant = 'primary' | 'warning';
+export type ButtonVariant = 'primary' | 'success' | 'warning' | 'error' | 'info' | 'neutral';
 export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
     children: ReactNode;
     size?: ButtonSize;
@@ -8,7 +8,7 @@ export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
     square?: boolean;
     /** 透明/无边框变体（btn-ghost，暂保持平面） */
     ghost?: boolean;
-    /** 颜色变体：primary（默认）/ warning（警告） */
+    /** 颜色变体：primary（默认）/ success / warning / error / info / neutral */
     variant?: ButtonVariant;
 }
 /**

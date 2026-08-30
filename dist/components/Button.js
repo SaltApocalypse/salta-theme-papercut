@@ -1,4 +1,13 @@
 import { jsx as _jsx, jsxs as _jsxs } from "react/jsx-runtime";
+/** 变体 → 前层纸片的配色（bg + 内容色 + hover） */
+const VARIANT_CLASS = {
+    primary: 'bg-primary text-primary-content hover:bg-primary',
+    success: 'bg-success text-success-content hover:bg-success',
+    warning: 'bg-warning text-warning-content hover:bg-warning',
+    error: 'bg-error text-error-content hover:bg-error',
+    info: 'bg-info text-info-content hover:bg-info',
+    neutral: 'bg-neutral text-neutral-content hover:bg-neutral',
+};
 const SIZE_CLASS = {
     xs: 'btn-xs',
     sm: 'btn-sm',
@@ -18,9 +27,7 @@ const PAPER_BACK = '#2f2229';
  * 这只是反馈，不是默认视觉的核心。
  */
 export function Button({ children, className, size = 'md', square = false, ghost = false, variant = 'primary', ...rest }) {
-    const toneClass = variant === 'warning'
-        ? 'bg-warning text-warning-content hover:bg-warning'
-        : 'bg-primary text-primary-content hover:bg-primary';
+    const toneClass = VARIANT_CLASS[variant];
     if (ghost) {
         return (_jsx("button", { type: "button", className: `btn btn-ghost ${SIZE_CLASS[size]} ${square ? 'btn-square' : ''} ${className ?? ''}`, ...rest, children: children }));
     }

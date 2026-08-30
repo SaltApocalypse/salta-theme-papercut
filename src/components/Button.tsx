@@ -2,7 +2,7 @@ import type { ButtonHTMLAttributes, ReactNode } from 'react'
 
 export type ButtonSize = 'xs' | 'sm' | 'md' | 'lg'
 
-export type ButtonVariant = 'primary' | 'warning'
+export type ButtonVariant = 'primary' | 'success' | 'warning' | 'error' | 'info' | 'neutral'
 
 export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   children: ReactNode
@@ -11,8 +11,18 @@ export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   square?: boolean
   /** 透明/无边框变体（btn-ghost，暂保持平面） */
   ghost?: boolean
-  /** 颜色变体：primary（默认）/ warning（警告） */
+  /** 颜色变体：primary（默认）/ success / warning / error / info / neutral */
   variant?: ButtonVariant
+}
+
+/** 变体 → 前层纸片的配色（bg + 内容色 + hover） */
+const VARIANT_CLASS: Record<ButtonVariant, string> = {
+  primary: 'bg-primary text-primary-content hover:bg-primary',
+  success: 'bg-success text-success-content hover:bg-success',
+  warning: 'bg-warning text-warning-content hover:bg-warning',
+  error: 'bg-error text-error-content hover:bg-error',
+  info: 'bg-info text-info-content hover:bg-info',
+  neutral: 'bg-neutral text-neutral-content hover:bg-neutral',
 }
 
 const SIZE_CLASS: Record<ButtonSize, string> = {
@@ -44,10 +54,7 @@ export function Button({
   variant = 'primary',
   ...rest
 }: ButtonProps) {
-  const toneClass =
-    variant === 'warning'
-      ? 'bg-warning text-warning-content hover:bg-warning'
-      : 'bg-primary text-primary-content hover:bg-primary'
+  const toneClass = VARIANT_CLASS[variant]
 
   if (ghost) {
     return (

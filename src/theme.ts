@@ -1,4 +1,14 @@
-import { Alert, Button, Dropdown, Input, LightButton, Panel, ThemeBackground } from './components'
+import {
+  Alert,
+  Button,
+  Dropdown,
+  Input,
+  LightButton,
+  Panel,
+  Switch,
+  ThemeBackground,
+  Tooltip,
+} from './components'
 
 /**
  * 主题包统一出口（供应用层的主题注册表使用）。
@@ -17,6 +27,8 @@ export const theme = {
     Input,
     LightButton,
     Panel,
+    Switch,
     ThemeBackground,
+    Tooltip,
   },
 } as const

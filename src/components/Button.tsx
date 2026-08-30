@@ -69,7 +69,7 @@ export function Button({
   }
 
   return (
-    <span className={`relative inline-flex ${className ?? ''}`}>
+    <span className={`relative inline-flex h-fit ${className ?? ''}`}>
       {/* 后层：黑色纸片（独立几何图形，错位 + 微旋转，无边框） */}
       <span
         aria-hidden
@@ -78,7 +78,7 @@ export function Button({
       {/* 前层：纸片（承载内容；仅上/左 1.5px 描边，右/下边由后层纸片构成外轮廓；hover/active 位移改变层叠） */}
       <button
         type="button"
-        className={`btn ${square ? 'btn-square' : 'w-full'} ${SIZE_CLASS[size]} relative rounded-none border-0 border-l-[1.5px] border-t-[1.5px] border-[color:var(--color-papercut-ink)] font-bold shadow-none transition-transform duration-150 ease-out ${toneClass} hover:translate-x-1 hover:translate-y-1 active:translate-x-1.5 active:translate-y-1.5 disabled:pointer-events-none disabled:border-neutral/50 disabled:bg-neutral/40 disabled:text-neutral/50`}
+        className={`btn ${square ? 'btn-square' : 'w-full'} ${SIZE_CLASS[size]} relative whitespace-nowrap rounded-none border-0 border-l-[1.5px] border-t-[1.5px] border-[color:var(--color-papercut-ink)] font-bold shadow-none transition-transform duration-150 ease-out ${toneClass} hover:translate-x-1 hover:translate-y-1 active:translate-x-1.5 active:translate-y-1.5 disabled:pointer-events-none disabled:border-neutral/50 disabled:bg-neutral/40 disabled:text-neutral/50`}
         {...rest}
       >
         {children}

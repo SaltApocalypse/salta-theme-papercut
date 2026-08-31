@@ -34,7 +34,7 @@ TeririBlocks 主题同人游戏视觉设计系统（浅色 / 深色，基于 **T
 <html data-theme="papercut-dark">
 ```
 
-组件（Button / Panel / Dropdown / Switch 等）与 `papercut-ink` 墨线令牌随主题自动反色。
+组件（Button / Panel / Dropdown / Toggle 等）与 `papercut-ink` 墨线令牌随主题自动反色。
 
 ### 3. JS/SVG 侧配色 token
 
@@ -46,7 +46,7 @@ import { theme } from "@salta/theme-papercut/tokens";
 
 ```ts
 import { theme } from "@salta/theme-papercut/theme";
-// theme = { id: "papercut", name: 'Papercut', components: { Button, LightButton, Panel, Input, Alert, Dropdown, Switch, Tooltip, ThemeBackground } }
+// theme = { id: "papercut", name: 'Papercut', components: { Button, LightButton, Panel, Input, Alert, Dropdown, Toggle, Tooltip, ThemeBackground } }
 ```
 
 ## 组件集（Theme Component Set）
@@ -61,7 +61,7 @@ import { theme } from "@salta/theme-papercut/theme";
 | `Input` | 输入框（底部书写线 + 主色聚焦环） |
 | `Alert` | 顶部提示条（info / success / warning / error） |
 | `Dropdown` | 下拉选择（宽度预设 content / sm / md / lg，选项可禁用） |
-| `Switch` | 纸刻开关 |
+| `Toggle` | 纸刻开关 |
 | `Tooltip` | 纸刻提示标签（四方位） |
 | `ThemeBackground` | 方格速写本背景 |
 
@@ -104,7 +104,7 @@ pnpm typecheck
 ```text
 salta-theme-papercut/
 ├── src/
-│   ├── components/   # 纸刻风组件集（Button/LightButton/Panel/Input/Alert/Dropdown/Switch/Tooltip/ThemeBackground）
+│   ├── components/   # 纸刻风组件集（Button/LightButton/Panel/Input/Alert/Dropdown/Toggle/Tooltip/ThemeBackground）
 │   ├── index.css     # daisyUI/theme 主题 token（papercut / papercut-dark）
 │   ├── tokens.ts     # JS 侧配色 token
 │   └── theme.ts      # 主题统一出口 { id, name, components }

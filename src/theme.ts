@@ -5,8 +5,8 @@ import {
   Input,
   LightButton,
   Panel,
-  Switch,
   ThemeBackground,
+  Toggle,
   Tooltip,
 } from './components'
 
@@ -27,8 +27,8 @@ export const theme = {
     Input,
     LightButton,
     Panel,
-    Switch,
     ThemeBackground,
+    Toggle,
     Tooltip,
   },
 } as const

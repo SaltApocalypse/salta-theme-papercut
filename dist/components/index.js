@@ -4,7 +4,7 @@ export { Dropdown } from './Dropdown';
 export { Input } from './Input';
 export { LightButton } from './LightButton';
 export { Panel } from './Panel';
-export { Switch } from './Switch';
+export { Toggle } from './Toggle';
 export { Tooltip } from './Tooltip';
 export { ThemeBackground } from './ThemeBackground';
 //# sourceMappingURL=index.js.map

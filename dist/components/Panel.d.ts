@@ -1,6 +1,8 @@
 import type { HTMLAttributes, ReactNode } from 'react';
 export interface PanelProps extends HTMLAttributes<HTMLDivElement> {
     children: ReactNode;
+    /** 焦点/高亮态：叠加 1.5px 内嵌墨线成完整方框（与 SaltLab 窗体焦点态约定一致） */
+    active?: boolean;
     /** 内边距档位 */
     padding?: 'none' | 'sm' | 'md' | 'lg';
     /** 强调：纸面染主色淡底 */
@@ -21,5 +23,5 @@ export interface PanelProps extends HTMLAttributes<HTMLDivElement> {
  * 与按钮同语言——两个独立平面图形叠放，黑色层在浅色背景上建立明显区隔，
  * 避免面板与背景融为一体。
  */
-export declare function Panel({ children, className, padding, highlight, tape, tilt, layered, fill, ...rest }: PanelProps): import("react").JSX.Element;
+export declare function Panel({ children, className, active, padding, highlight, tape, tilt, layered, fill, ...rest }: PanelProps): import("react").JSX.Element;
 //# sourceMappingURL=Panel.d.ts.map

@@ -2,6 +2,8 @@ import type { HTMLAttributes, ReactNode } from 'react'
 
 export interface PanelProps extends HTMLAttributes<HTMLDivElement> {
   children: ReactNode
+  /** 焦点/高亮态：叠加 1.5px 内嵌墨线成完整方框（与 SaltLab 窗体焦点态约定一致） */
+  active?: boolean
   /** 内边距档位 */
   padding?: 'none' | 'sm' | 'md' | 'lg'
   /** 强调：纸面染主色淡底 */
@@ -33,6 +35,7 @@ const PADDING_CLASS = {
 export function Panel({
   children,
   className,
+  active = false,
   padding = 'md',
   highlight = false,
   tape = true,
@@ -42,7 +45,9 @@ export function Panel({
   ...rest
 }: PanelProps) {
   return (
-    <div className={`relative ${fill ? 'flex w-full' : 'inline-flex'} ${tilt ? '-rotate-1' : ''}`}>
+    <div
+      className={`${fill ? 'absolute inset-0 flex' : 'relative inline-flex'} ${tilt ? '-rotate-1' : ''}`}
+    >
       {/* 后层：黑色纸片（错位 3px，区隔背景） */}
       {layered && (
         <span
@@ -54,7 +59,7 @@ export function Panel({
       <div
         className={`relative ${fill ? 'flex-1' : ''} border-0 border-l-[1.5px] border-t-[1.5px] border-[#2f2229] ${PADDING_CLASS[padding]} ${
           highlight ? 'bg-primary/15' : 'bg-base-200'
-        } text-base-content ${className ?? ''}`}
+        } ${active ? 'ring-1 ring-inset ring-[color:var(--color-papercut-ink)]' : ''} text-base-content ${className ?? ''}`}
         {...rest}
       >
         {/* 顶部胶带 */}

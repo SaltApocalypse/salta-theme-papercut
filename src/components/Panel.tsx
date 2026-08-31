@@ -46,7 +46,7 @@ export function Panel({
 }: PanelProps) {
   return (
     <div
-      className={`${fill ? 'absolute inset-0 flex' : 'relative inline-flex'} ${tilt ? '-rotate-1' : ''}`}
+      className={`${fill ? 'flex h-full w-full' : 'relative inline-flex'} ${tilt ? '-rotate-1' : ''}`}
     >
       {/* 后层：黑色纸片（错位 3px，区隔背景） */}
       {layered && (
